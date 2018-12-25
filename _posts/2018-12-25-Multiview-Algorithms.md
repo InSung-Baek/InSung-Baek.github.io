@@ -9,6 +9,7 @@ title : Multi-view Algorithms
  
 >>###### [Semi-Supervised Learning(강필성 교수님 Lecture Note 5강 p3참고)]![semi](https://user-images.githubusercontent.com/46133856/50425536-335b3500-08bc-11e9-9e43-70ff51bc9068.jpg)
 
+****
   
 ### 2. Multi-view Algorithms(Co-Training)
 >Multi-view Algorithm의 핵심은 __같은 문제(여기서는 Unlabeled Data에 Label을 부여하는 것)에 대해서도 서로 다른 관점에서 문제를 해결 할 수 있다면 각각의 다른 관점에서 해결한 결과물을 활용해 문제를 더 정확하게 해결해 보자는 것이다.__ 이는 앙상블 기법과 유사한 접근 방법이라고 할 수 있다. 앙상블 기법 또한 하나의 문제에 대해 한 가지 알고리즘을 적용하는 것보다는 여러 가지 알고리즘을 활용하여 문제를 해결한다면 더 좋은 결과를 얻을 수 있다는 아이디어에서 시작하는 것이기 때문이다. 이처럼 Multi-view Algorithms에 경우 앙상블 기법과 유사한 아이디어에서 시작하기 때문에 앙상블 기법에서 핵심인 __Diversity를 어떻게 확보할 것인가?__ 에 대한 전략적인 고민이 가장 중요한 고민 중 하나이다. 
