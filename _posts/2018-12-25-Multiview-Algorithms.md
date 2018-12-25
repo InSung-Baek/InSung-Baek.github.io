@@ -312,6 +312,6 @@ accuracy[8].append('%0.3f'% accuracy_score(y_test, y_pred))
 </code></pre>
 
 ### 5.Conclusion
-> 위의 Code를 통해 Multi-view Algorithms(Co-Training)을 구현해 본 결과, 가장 좋은 성능을 보인 것은 단일 Ensemble Model이었다. Co-Training Model은 단일 Rogistic, Naive Bayes Model보다는 좋은 성능을 보였지만, 단일 Ensemble에는 조금 미치지 못한 것으로 보였다. 이는 Co-Training에 사용한 Classfication Model끼리의 성능 차이가 있고, 더 다양한 Model을 활용한 Diversity를 확보하지 못했기 때문이라고 생각 된다. 따라서 **좋은 성능을 얻을 수 있는 Co-Training 방법론을 사용하기 위해서는 다양한 Model의 장,단점을 활용해 Diversity를 확보하는 것이 중요** 하다고 생각 된다.
+> 위의 Code를 통해 Multi-view Algorithms(Co-Training)을 구현해 본 결과, 가장 좋은 성능을 보인 것은 단일 Ensemble Model이었다. Co-Training Model은 단일 Rogistic, Naive Bayes Model보다는 좋은 성능을 보였지만, 단일 Ensemble에는 조금 미치지 못한 것으로 보였다. 이는 Co-Training에 사용한 Classfication Model끼리의 성능 차이가 있고, 더 다양한 Model을 활용한 Diversity를 확보하지 못했기 때문이라고 생각 된다. 따라서 **좋은 성능을 얻을 수 있는 Co-Training 방법론을 사용하기 위해서는 다양한 Model의 장,단점을 활용해 Diversity를 확보하는 것이 중요** 하다고 생각 된다. 긴 글 읽어주셔서 감사합니다. 수정사항이 있을 시에는(babogato33@gamil.com)으로 언제든지 연락주세요.
 
 >> [Test 결과(Youtube-Tutorial 17 Co Training,이준헌 참고)]![accuracy](https://user-images.githubusercontent.com/46133856/50425294-a5c91680-08b6-11e9-96e7-b9c63a58db69.JPG)
