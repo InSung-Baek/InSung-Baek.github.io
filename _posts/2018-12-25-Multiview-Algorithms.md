@@ -1,6 +1,6 @@
 ---
 layout : post
-title : Multi-view Algorithms
+title : Multi-view Algorithms(Co-Training)
 ---
 해당 글은 고려대학교 강필성 교수님의 2018학년도 2학기 Business Analytics 수업을 참조로 작성되었습니다.
 
