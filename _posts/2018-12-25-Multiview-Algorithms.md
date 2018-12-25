@@ -27,7 +27,7 @@ title : Multi-view Algorithms(Co-Training)
 
 1) 먼저 Text Data를 TF-IDF, LDA, Doc2vec 3가지 알고리즘에 대해 적용한다.
 > [Text Classfication]![1](https://user-images.githubusercontent.com/46133856/50424915-4a942580-08b0-11e9-881a-bb5d4edc015e.JPG)
-> (강필성 교수님 Lecture Note 5강 pp59~61 참고) 
+> (강필성 교수님 Lecture Note 5강 pp59~61 참고)
 
 ****
 
