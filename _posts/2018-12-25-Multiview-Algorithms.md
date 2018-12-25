@@ -37,8 +37,7 @@ title : Multi-view Algorithms
 > 아래에 나오는 Python Code는 2017년 Business Analytics 강의를 수강 하신 이준헌 석사 과정님의 Code를 활용했습니다.
 > 먼저 Cotraining(Multi-view) Algorithms을 적용하는 데 기본적으로 필요한 패키지 Code입니다.
 
-~~~
-<pre><code>
+```pythonscript
 #Cotraining을 구성하는데 필요한 패키지
 import random
 import numpy as np
@@ -52,8 +51,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import classification_report
 from sklearn.datasets import make_classification
 from sklearn.metrics import accuracy_score
-</code></pre>
-~~~
+```
 
 >Cotraing Algorithms을 구현한 Python Code입니다.
 
