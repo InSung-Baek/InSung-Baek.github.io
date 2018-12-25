@@ -10,6 +10,7 @@ title : Multi-view Algorithms
  
  
 >> [Semi-Supervised Learning]![semi](https://user-images.githubusercontent.com/46133856/50425536-335b3500-08bc-11e9-9e43-70ff51bc9068.jpg)
+
 >> (강필성 교수님 Lecture Note 5강 p3 참고)
 
 ****
