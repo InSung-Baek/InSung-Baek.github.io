@@ -30,7 +30,7 @@ title : Multi-view Algorithms
 ### 4. Python Code
 > 아래부터 나오는 Python Code는 2017년 Business Analytics 강의를 수강 하신 이준헌 석사 과정님의 Code를 활용했습니다.
 > 먼저 Cotraining(Multi-view) Algorithms을 적용하는 데 기본적으로 필요한 패키지 Code입니다.
->>
+
 <pre><code>
 # Cotraining을 구성하는데 필요한 패키지
 import random
@@ -48,7 +48,7 @@ from sklearn.metrics import accuracy_score
 </code></pre>
 
 > Cotraing Algorithms을 구현한 Python Code입니다.
->>
+
 <pre><code>
 class CoTraining:
 
@@ -188,9 +188,7 @@ class CoTraining:
 </code></pre>
 
 > 평가를 위한 Data Set입니다. Labeled Data와 Unlabeled Data를 구분한 Code입니다.
->>
 <pre><code>
-
 if __name__ == '__main__':   
     accuracy = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
     
@@ -221,7 +219,7 @@ if __name__ == '__main__':
 </code></pre>
 
 > Logistic, Naive Bayes, Random Forests 단일 Algorithms을 적용한 Accuracy를 확인하는 Code입니다.
->>
+
 <pre><code>
 print ('Logistic')
         
@@ -255,20 +253,24 @@ accuracy[2].append('%0.3f'% accuracy_score(y_test, y_pred))
 </code></pre>
 
 > Co-Training 방법을 적용한 Code입니다. (Random Forest + Random Forest/Logistic/Naive Bayes Algorithms)  
->>
+
 <pre><code>
 # Cotrining을 이용하여 Classifier 조합별 성능 평가  
         
 # Random Forest & Random Forest Cotraining        
 print ('Random Forest-Random Forest CoTraining')
         
-RR_co_clf = CoTraining(RandomForestClassifier(n_estimators=100), RandomForestClassifier(n_estimators=100), p=2, n=2, k=20, u=100)
+RR_co_clf = CoTraining(RandomForestClassifier(n_estimators=100), 
+                       RandomForestClassifier(n_estimators=100), 
+                       p=2, n=2, k=20, u=100)
 RR_co_clf.fit(X1, X2, y)
-y_pred = RR_co_clf.predict(X_test[:, :N_FEATURES // 2], X_test[:, N_FEATURES // 2:])
+y_pred = RR_co_clf.predict(X_test[:, :N_FEATURES // 2], 
+                           X_test[:, N_FEATURES // 2:])
 
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[3].append('%0.3f'% accuracy_score(y_test, y_pred))
-y_pred = RR_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2], X_test[:, N_FEATURES // 2:])
+y_pred = RR_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2], 
+                                X_test[:, N_FEATURES // 2:])
         
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[4].append('%0.3f'% accuracy_score(y_test, y_pred))
@@ -276,13 +278,16 @@ accuracy[4].append('%0.3f'% accuracy_score(y_test, y_pred))
 # Random Forest & Logistic Regression Cotraining
         
 print ('Random Forest-Logistic Regression CoTraining')
-RL_co_clf = CoTraining(RandomForestClassifier(n_estimators=100), LogisticRegression(), p=2, n=2, k=20, u=100)
+RL_co_clf = CoTraining(RandomForestClassifier(n_estimators=100), 
+                       LogisticRegression(), p=2, n=2, k=20, u=100)
 RL_co_clf.fit(X1, X2, y)
-y_pred = RL_co_clf.predict(X_test[:, :N_FEATURES // 2], X_test[:, N_FEATURES // 2:])
+y_pred = RL_co_clf.predict(X_test[:, :N_FEATURES // 2], 
+                           X_test[:, N_FEATURES // 2:])
         
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[5].append('%0.3f'% accuracy_score(y_test, y_pred))
-y_pred = RL_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2], X_test[:, N_FEATURES // 2:])
+y_pred = RL_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2], 
+                                X_test[:, N_FEATURES // 2:])
         
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[6].append('%0.3f'% accuracy_score(y_test, y_pred))
@@ -290,13 +295,16 @@ accuracy[6].append('%0.3f'% accuracy_score(y_test, y_pred))
         
 # Random Forest & Naive Bayes Classifier Cotraining
 print ('Random Forest-Naive Bayes Classifier CoTraining')
-RN_co_clf = CoTraining(RandomForestClassifier(n_estimators=100), LogisticRegression(), p=2, n=2, k=20, u=100)
+RN_co_clf = CoTraining(RandomForestClassifier(n_estimators=100), 
+                       LogisticRegression(), p=2, n=2, k=20, u=100)
 RN_co_clf.fit(X1, X2, y)
-y_pred = RN_co_clf.predict(X_test[:, :N_FEATURES // 2], X_test[:, N_FEATURES // 2:])
+y_pred = RN_co_clf.predict(X_test[:, :N_FEATURES // 2], 
+                           X_test[:, N_FEATURES // 2:])
         
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[7].append('%0.3f'% accuracy_score(y_test, y_pred))
-y_pred = RN_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2], X_test[:, N_FEATURES // 2:])
+y_pred = RN_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2], 
+                                X_test[:, N_FEATURES // 2:])
         
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[8].append('%0.3f'% accuracy_score(y_test, y_pred))
