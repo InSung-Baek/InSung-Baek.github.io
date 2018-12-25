@@ -9,7 +9,10 @@ title : Multi-view Algorithms
 
 > Multi-view Algorithms에 대한 설명을 하기에 앞서, 우리는 Semi-Supervised Learning에 대해 간략하게 알아야 한다. Semi-Supervised Learning이란 Label이 되어 있는 Data와 Label이 되어 있지 않은 Data가 섞여 있는 경우를 의미한다. 따라서 Semi-Supervised Learning에서 해결해야 할 핵심 문제는 __'Label 되어 있는 data를 활용하여 Label 되어 있지 않은 Data를 어떻게 처리할 것인가?'__ 가 이다. 이와 관련해서 Self-Training, Generative Model 활용, Graph-based SSL, Multi-view Algoritms 등이 있다. 이번 글에서는 Multi-view Algorithms(Co-Training)에 대해 자세히 알아보려 한다.
  
->> [Semi-Supervised Learning(강필성 교수님 Lecture Note 5강 p3참고)]![semi](https://user-images.githubusercontent.com/46133856/50425536-335b3500-08bc-11e9-9e43-70ff51bc9068.jpg)
+ ****
+ 
+>> ![semi](https://user-images.githubusercontent.com/46133856/50425536-335b3500-08bc-11e9-9e43-70ff51bc9068.jpg)
+>> ###### [Semi-Supervised Learning(강필성 교수님 Lecture Note 5강 p3참고)]
 
 ****
   
@@ -39,7 +42,7 @@ title : Multi-view Algorithms
 > 아래에 나오는 Python Code는 2017년 Business Analytics 강의를 수강 하신 이준헌 석사 과정님의 Code를 활용했습니다.
 > 먼저 Cotraining(Multi-view) Algorithms을 적용하는 데 기본적으로 필요한 패키지 Code입니다.
 
-```javascript
+```python
 #Cotraining을 구성하는데 필요한 패키지
 import random
 import numpy as np
@@ -57,7 +60,7 @@ from sklearn.metrics import accuracy_score
 
 >Cotraing Algorithms을 구현한 Python Code입니다.
 
-<pre><code>
+'''python
 class CoTraining:
 
     def __init__(self, clf1, clf2, p, n, k, u):
@@ -194,11 +197,11 @@ class CoTraining:
         y_pred = self.clf1.predict(X1)
 
         return y_pred        
-</code></pre>
+'''
 
 > 평가를 위한 Data Set입니다. Labeled Data와 Unlabeled Data를 구분한 Code입니다.
 
-<pre><code>
+'''python
 if __name__ == '__main__':   
     accuracy = [[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[],[]]
     
@@ -226,11 +229,11 @@ if __name__ == '__main__':
         # Feature를 반반으로 나눔
         X1 = X[:,:N_FEATURES // 2]
         X2 = X[:, N_FEATURES // 2:]        
-</code></pre>
+'''
 
 >Logistic, Naive Bayes, Random Forests 단일 Algorithms을 적용한 Accuracy를 확인하는 Code입니다.
 
-<pre><code>
+'''python
 print ('Logistic')
         
 base_lr = LogisticRegression()
@@ -260,11 +263,11 @@ y_pred = base_rf.predict(X_test)
 print (classification_report(y_test, y_pred, digits=3))
         
 accuracy[2].append('%0.3f'% accuracy_score(y_test, y_pred))
-</code></pre>
+'''
 
 >Co-Training 방법을 적용한 Code입니다. (Random Forest + Random Forest/Logistic/Naive Bayes Algorithms)  
 
-<pre><code>
+'''python
 #Cotrining을 이용하여 Classifier 조합별 성능 평가  
         
 #Random Forest & Random Forest Cotraining        
@@ -318,7 +321,7 @@ y_pred = RN_co_clf.predict_clf1(X_test[:, :N_FEATURES // 2],
         
 print (classification_report(y_test, y_pred, digits=3))
 accuracy[8].append('%0.3f'% accuracy_score(y_test, y_pred))
-</code></pre>
+'''
 
 ****
 
