@@ -344,4 +344,5 @@ accuracy[8].append('%0.3f'% accuracy_score(y_test, y_pred))
 
 >>[Test 결과]![accuracy](https://user-images.githubusercontent.com/46133856/50425692-2429b680-08bf-11e9-8aab-5540e1e301cb.JPG)
 >>(Youtube-Tutorial 17 Co Training,이준헌 참고)
+
 ****
